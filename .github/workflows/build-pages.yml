@@ -3,11 +3,11 @@ name: Build and deploy
 on:
   push:
     branches:
-      - 'master'
+      - 'staging'
 
 jobs:
   build:
-    name: Build and Test
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
