@@ -36,8 +36,8 @@ export class PathService {
     },
     { section: 'Firestore', key: 'firestore', selected: false,
       pages: [
-        { label: 'Collection', key: 'collection', selected: false, },
         { label: 'Documents', key: 'documents', selected: false, },
+        { label: 'Collections', key: 'collections', selected: false, },
         { label: 'Offline Data', key: 'offline-data', selected: false, },
         { label: 'Querying Collections', key: 'querying-collections', selected: false, },
       ]

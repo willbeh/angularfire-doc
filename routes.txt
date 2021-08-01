@@ -9,7 +9,7 @@
 /docs/auth/router-guards
 /docs/deploy/getting-started
 /docs/emulators/emulators
-/docs/firestore/collection
+/docs/firestore/collections
 /docs/firestore/documents
 /docs/firestore/offline-data
 /docs/firestore/querying-collections
