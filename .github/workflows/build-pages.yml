@@ -25,6 +25,9 @@ jobs:
           base_href: '/angularfire-doc/'
       - name: Render
         run: npm run prerender
+      - name: copy 404
+        run: |
+          cp dist/angularfire-doc/browser/404/index.html dist/angularfire-doc/browser/404.html
       - name: Archive build
         if: success()
         uses: actions/upload-artifact@v2
