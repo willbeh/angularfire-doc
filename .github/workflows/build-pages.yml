@@ -27,10 +27,11 @@ jobs:
         run: npm run prerender
       - name: Archive build
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: deploy_dist
           path: dist
+          retention-days: 1
   deploy:
     runs-on: ubuntu-latest
     needs: build
