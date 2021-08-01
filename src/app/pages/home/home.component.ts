@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { MarkdownService } from 'ngx-markdown';
 import { PathSection, PathService } from 'src/app/services/path.service';
 import { environment } from 'src/environments/environment';
 
@@ -16,7 +17,7 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent implements OnInit {
   paths:PathSection[] = []
   filepath = '';
-  constructor(private routes: ActivatedRoute, private pathService: PathService, private title: Title) { }
+  constructor(private routes: ActivatedRoute, private pathService: PathService, private title: Title, private markdownService: MarkdownService) { }
 
   ngOnInit(): void {
     this.paths = this.pathService.paths;
@@ -52,6 +53,16 @@ export class HomeComponent implements OnInit {
       })
       this.filepath += '.md';
     })
+
+    this.markdownService.renderer.link = (href, title, text) => {
+      console.log(href?.startsWith('http'), text, href)
+      if(href?.startsWith('http')) {
+        return `<a href="${href}" target="_blank">${text}</a>` 
+      } else {
+        return `<a href="${href}">${text}</a>` 
+      }
+        
+    };
   }
 
 }

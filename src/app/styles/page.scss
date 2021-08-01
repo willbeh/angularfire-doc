@@ -1,6 +1,7 @@
-h1 { @apply text-3xl font-bold my-4;}
-h3 { @apply text-xl font-medium mt-5 mb-3;}
+h1 { @apply text-3xl font-bold my-5;}
+h3 { @apply text-xl font-medium mt-5 mb-4;}
 a { @apply text-blue-600;}
 pre { @apply text-sm; }
-p { @apply mb-2;}
-code { @apply bg-gray-100;}
+p { @apply m-3;}
+code { @apply bg-gray-100 text-sm p-1;}
+h3 code { @apply bg-gray-100 text-xl font-medium p-1;}
