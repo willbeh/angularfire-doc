@@ -61,7 +61,6 @@ export class HomeComponent implements OnInit {
         if(href.startsWith('http')) {
           return `<a href="${href}" target="_blank">${text}</a>` 
         } else if(!href.includes('docs/')) {
-          console.log(href?.includes('docs'), text, href)
           return `<a href="${environment.path}/${shortpath}${href.replace('.md', '')}">${text}</a>` 
         }else {
           return `<a href="${environment.path}/${href.replace('.md', '')}">${text}</a>` 
