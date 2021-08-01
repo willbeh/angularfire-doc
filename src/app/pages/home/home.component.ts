@@ -21,12 +21,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.paths = this.pathService.paths;
+    let shortpath = '';
     let pageName = ''
 
     this.routes.url.subscribe(urls => {
       this.filepath = `${environment.path}/assets`
 
       if(urls[1]) {
+        shortpath = `/${urls[0].path}/${urls[1].path}/`
         this.paths = this.paths.map(path => {
           if(path.key === urls[1].path) {
             pageName = path.section
@@ -59,7 +61,9 @@ export class HomeComponent implements OnInit {
       if(href) {
         if(href.startsWith('http')) {
           return `<a href="${href}" target="_blank">${text}</a>` 
-        } else {
+        } else if(!href.includes('/docs/')) {
+          return `<a href="${shortpath}${href.replace('.md', '')}">${text}</a>` 
+        }else {
           return `<a href="${href.replace('.md', '')}">${text}</a>` 
         }
       } else {
