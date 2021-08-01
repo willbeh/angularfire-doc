@@ -22,7 +22,6 @@ jobs:
       - name: copy 404
         run: |
           cp dist/angularfire-doc/browser/404/index.html dist/angularfire-doc/browser/404.html
-          done
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
