@@ -56,11 +56,16 @@ export class HomeComponent implements OnInit {
 
     this.markdownService.renderer.link = (href, title, text) => {
       console.log(href?.startsWith('http'), text, href)
-      if(href?.startsWith('http')) {
-        return `<a href="${href}" target="_blank">${text}</a>` 
+      if(href) {
+        if(href.startsWith('http')) {
+          return `<a href="${href}" target="_blank">${text}</a>` 
+        } else {
+          return `<a href="${href.replace('.md', '')}">${text}</a>` 
+        }
       } else {
-        return `<a href="${href}">${text}</a>` 
+        return text
       }
+      
         
     };
   }
