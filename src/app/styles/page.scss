@@ -4,4 +4,7 @@ a { @apply text-blue-600;}
 pre { @apply text-sm; }
 p { @apply m-3;}
 code { @apply bg-gray-100 text-sm p-1;}
+pre { @apply bg-gray-100 text-sm p-3;}
+ul li { @apply list-disc ml-4;}
 h3 code { @apply bg-gray-100 text-xl font-medium p-1;}
+table, tr, td, th { @apply border-collapse border border-gray-300 p-2;}
