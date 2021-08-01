@@ -32,6 +32,7 @@ export class P404Component implements OnInit {
 
   ngOnInit(): void {
     this.paths = this.pathService.paths;
+    this.title.setTitle('Page Not Found - AngularFire Docs')
   }
 
 }
