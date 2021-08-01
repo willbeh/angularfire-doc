@@ -8,8 +8,7 @@
 /bazel-out
 
 /.firebase
-.firebaserc
-firebase.json
+firebase-debug.log
 
 # dependencies
 /node_modules
