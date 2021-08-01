@@ -2,8 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+  <router-outlet></router-outlet>
+  <div>
+    <a href='#' [routerLink]="['']">Home</a>
+    <a href='#' [routerLink]="['about']">About</a>
+  `
 })
 export class AppComponent {
   title = 'angularfire-doc';
