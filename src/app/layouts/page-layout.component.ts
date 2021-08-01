@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PathSection } from '../services/path.service';
 
 @Component({
   selector: 'app-page-layout',
@@ -126,7 +127,7 @@ import { Component, Input, OnInit } from '@angular/core';
   ]
 })
 export class PageLayoutComponent implements OnInit {
-  @Input() paths:any[] = [];
+  @Input() paths:PathSection[] = [];
 
   isOpen = false;
 

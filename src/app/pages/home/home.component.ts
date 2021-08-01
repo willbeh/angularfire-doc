@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PathService } from 'src/app/services/path.service';
+import { PathSection, PathService } from 'src/app/services/path.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,27 +13,28 @@ import { environment } from 'src/environments/environment';
   styles: []
 })
 export class HomeComponent implements OnInit {
-  paths:any[] = []
+  paths:PathSection[] = []
   path = '';
   constructor(private routes: ActivatedRoute, private pathService: PathService) { }
 
   ngOnInit(): void {
     this.paths = this.pathService.paths;
-    this.routes.paramMap.subscribe(routes => {
-      // console.log(routes);
-    })
 
     this.routes.url.subscribe(urls => {
-      this.path = `${environment.path}/assets/docs`
+      this.path = `${environment.path}/assets`
       urls.forEach(url => {
-        console.log('url', url.path)
-        this.path += `/${url.path}`
+        // this.paths = this.paths.map(path => ({...path, selected: false}));
+        this.paths = this.paths.map(path => {
+          if(path.key === url.path.replace('.md', '')) {
+            return {...path, selected: true}
+          } else {
+            return path;
+          }
+        })
+        this.path += `/${url.path.replace('.md', '')}`
       })
       this.path += '.md';
-      console.log(this.path)
     })
-
-    console.log(this.routes.snapshot.url)
   }
 
 }
