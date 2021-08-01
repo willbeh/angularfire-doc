@@ -18,8 +18,8 @@ jobs:
           node-version: '12.x'
       - name: Install dependencies
         run: npm ci
-      - name: Build
-        run: npm run build:github
+      - name: Render
+        run: npm run prerender
       - name: Archive build
         if: success()
         uses: actions/upload-artifact@v1
