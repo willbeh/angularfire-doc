@@ -56,7 +56,7 @@ import { PathSection } from '../services/path.service';
           <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg" alt="Workflow">
         </div> -->
         <nav class="mt-5 px-2 space-y-1">
-          <app-sidebar-layout [paths]="paths"></app-sidebar-layout>
+          <app-sidebar-layout [paths]="paths" (selected)="toggle()"></app-sidebar-layout>
         </nav>
       </div>
       <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
@@ -87,7 +87,7 @@ import { PathSection } from '../services/path.service';
             <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg" alt="Workflow">
           </div> -->
           <nav class="mt-5 flex-1 px-2 bg-white space-y-1">
-            <app-sidebar-layout [paths]="paths"></app-sidebar-layout>
+            <app-sidebar-layout [paths]="paths" (selected)="toggle()"></app-sidebar-layout>
           </nav>
         </div>
         <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
@@ -95,7 +95,7 @@ import { PathSection } from '../services/path.service';
             <div class="flex items-center">
               <div class="ml-3">
                 <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                  BWL
+                  willbeh
                 </p>
               </div>
             </div>

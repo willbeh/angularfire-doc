@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PathSection } from '../services/path.service';
 
 @Component({
@@ -20,6 +20,7 @@ import { PathSection } from '../services/path.service';
         </button>
         <div *ngIf="nav.selected" class="space-y-1" id="sub-menu-1">
           <a *ngFor="let page of nav.pages" [routerLink]="['', 'docs', nav.key, page.key]" href="#" 
+            (click) = "selected.emit()"
             [ngClass] = "[page.selected? 'bg-gray-100': '', 
             'group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50']">
             {{ page.label }}
@@ -32,6 +33,8 @@ import { PathSection } from '../services/path.service';
 })
 export class SidebarLayoutComponent implements OnInit {
   @Input() paths:PathSection[] = [];
+
+  @Output() selected = new EventEmitter()
 
   constructor() { }
 

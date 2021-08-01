@@ -1,5 +1,9 @@
 /docs/getting-started/readme
 /docs/getting-started/install-and-setup
+/docs/getting-started/install-angular-cli-windows10
+/docs/getting-started/version-4-upgrade
+/docs/getting-started/version-5-upgrade
+/docs/getting-started/version-6-upgrade
 /docs/analytics/getting-started
 /docs/auth/getting-started
 /docs/auth/router-guards

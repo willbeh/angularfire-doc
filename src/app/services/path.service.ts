@@ -6,7 +6,11 @@ export class PathService {
     { section: 'Getting Started', key: 'getting-started', selected: false,
       pages: [
         { label: 'Overview', key: 'readme', selected: false, },
-        { label: 'Install', key: 'install-and-setup', selected: false, },
+        { label: 'Install and Setup', key: 'install-and-setup', selected: false, },
+        { label: 'Windows 10 CLI', key: 'install-angular-cli-windows10', selected: false, },
+        { label: 'Version 4 Upgrade', key: 'version-4-upgrade', selected: false, },
+        { label: 'Version 5 Upgrade', key: 'version-5-upgrade', selected: false, },
+        { label: 'Version 6 Upgrade', key: 'version-6-upgrade', selected: false, },
       ]
     },
     { section: 'Analytics', key: 'analytics', selected: false,
