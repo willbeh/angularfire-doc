@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
       this.filepath = `${environment.path}/assets`
 
       if(urls[1]) {
-        shortpath = `/${urls[0].path}/${urls[1].path}/`
+        shortpath = `${urls[0].path}/${urls[1].path}/`
         this.paths = this.paths.map(path => {
           if(path.key === urls[1].path) {
             pageName = path.section
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
         if(href.startsWith('http')) {
           return `<a href="${href}" target="_blank">${text}</a>` 
         } else if(!href.includes('/docs/')) {
-          return `<a href="${shortpath}${href.replace('.md', '')}">${text}</a>` 
+          return `<a href="${environment.path}/${shortpath}${href.replace('.md', '')}">${text}</a>` 
         }else {
           return `<a href="${href.replace('.md', '')}">${text}</a>` 
         }
