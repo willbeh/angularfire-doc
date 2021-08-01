@@ -1,1 +1,6 @@
-/about
+/getting-started/readme
+/getting-started/install-and-setup
+/firestore/collection
+/firestore/documents
+/firestore/offline-data
+/firestore/querying-collections
