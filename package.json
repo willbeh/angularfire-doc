@@ -10,7 +10,7 @@
     "dev:ssr": "ng run angularfire-doc:serve-ssr",
     "serve:ssr": "node dist/angularfire-doc/server/main.js",
     "build:ssr": "NODE_ENV=production ng build --sourceMap=false --base-href /angularfire-doc/ && ng run angularfire-doc:server",
-    "build:github": "NODE_ENV=production ng build --sourceMap=false --base-href /angularfire-doc/ && NODE_ENV=production ng run angularfire-doc:prerender --routes-file routes.txt",
+    "build:github": "NODE_ENV=production ng build --sourceMap=false --base-href /angularfire-doc/ && ng run angularfire-doc:prerender",
     "prerender": "NODE_ENV=production ng run angularfire-doc:prerender"
   },
   "private": true,
