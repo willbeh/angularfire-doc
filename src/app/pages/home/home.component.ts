@@ -9,7 +9,22 @@ import { environment } from 'src/environments/environment';
   selector: 'app-home',
   template: `
   <app-page-layout [paths]="paths">
-    <markdown [src]="filepath"></markdown>
+    <markdown *ngIf="!hasError else showError" [src]="filepath" (error)="setError()"></markdown>
+    <ng-template #showError>
+      <div class="min-h-screen md:grid md:place-items-center">
+        <div class="max-w-max mx-auto">
+          <main class="sm:flex">
+            <p class="text-4xl font-extrabold text-indigo-600 sm:text-5xl">404</p>
+            <div class="sm:ml-6">
+              <div class="sm:border-l sm:border-gray-200 sm:pl-6">
+                <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">Doc not found</h1>
+                <p class="mt-1 text-base text-gray-500">Select a page using the navigator</p>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </ng-template>
   </app-page-layout>
   `,
   styles: []
@@ -17,12 +32,15 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent implements OnInit {
   paths:PathSection[] = []
   filepath = '';
+  hasError = false;
+
   constructor(private routes: ActivatedRoute, private pathService: PathService, private title: Title, private markdownService: MarkdownService) { }
 
   ngOnInit(): void {
     this.paths = this.pathService.paths;
     let shortpath = '';
-    let pageName = ''
+    let pageName = '';
+    this.hasError = false;
 
     this.routes.url.subscribe(urls => {
       this.filepath = `${environment.path}/assets`
@@ -71,6 +89,10 @@ export class HomeComponent implements OnInit {
       
         
     };
+  }
+
+  setError() {
+    this.hasError = true;
   }
 
 }
