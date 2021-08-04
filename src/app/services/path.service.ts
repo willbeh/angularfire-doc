@@ -74,7 +74,7 @@ export class PathService {
       pages: [
         { label: 'Lists', key: 'lists', selected: false, },
         { label: 'Objects', key: 'objects', selected: false, },
-        { label: 'Querying List', key: 'querying-list', selected: false, },
+        { label: 'Querying Lists', key: 'querying-lists', selected: false, },
       ]
     },
     { section: 'Storage', key: 'storage', selected: false,
